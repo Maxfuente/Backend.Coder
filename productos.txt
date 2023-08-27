@@ -1,0 +1,1 @@
+[{"titulo":"producto de prueba","descripcion":"descripcion1","precio":"5000","imagen":"imagen1","codigo":"abc123","stock":"25","id":1},{"titulo":"producto de prueba2","descripcion":"descripcion2","precio":"8000","imagen":"imagen2","codigo":"abc456","stock":"20","id":2}]
