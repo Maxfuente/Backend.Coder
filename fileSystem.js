@@ -21,10 +21,31 @@ class ProductManager   {
         await fs.writeFile(this.patch, JSON.stringify(this.products))
     }
 
-    getProducts = async()=>{
-      let respuesta =  await fs.readFile(this.patch,"utf-8")
-      console.log(JSON.parse(respuesta))
+    readProducts = async()=>{
+        let respuesta =  await fs.readFile(this.patch,"utf-8")
+        return JSON.parse(respuesta)
+    }
 
+    getProducts = async()=>{
+      let respuesta2 =  await this.readProducts()
+      return console.log(respuesta2)
+
+    }
+    getProductsById = async(id)=>{
+        let respuesta3 =  await this.readProducts()  
+        if (!respuesta3.find(products => products.id===id)){
+            console.log("No existe");
+        } else {
+            console.log(respuesta3.find(products => products.id===id))
+        }
+
+    }
+
+
+    deleteProductsById = async(id) =>{
+        let respuesta3 = await this.readProducts();
+        let productFilter = respuesta3.filter(products => products.id != id)
+        await fs.writeFile(this.patch, JSON.stringify(productFilter))
     }
     }
 const productos = new ProductManager
@@ -33,4 +54,6 @@ const productos = new ProductManager
 productos.addProduct('producto de prueba','descripcion1','5000', 'imagen1', 'abc123','25')
 productos.addProduct('producto de prueba2','descripcion2','8000', 'imagen2', 'abc456','20')
 
-productos.getProducts()
+//productos.getProducts()
+//productos.getProductsById(3)
+productos.deleteProductsById(2)
