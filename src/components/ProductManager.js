@@ -1,6 +1,6 @@
     import {  promises as fs } from "fs";
 
-class ProductManager {
+export default class ProductManager {
     constructor() {
         this.patch = "./productos.txt";
         this.products = [];
@@ -56,14 +56,20 @@ class ProductManager {
     }
 
 }
-const productos = new ProductManager
+//const productos = new ProductManager
 
 
 /*productos.addProduct('producto de prueba', 'descripcion1', '5000', 'imagen1', 'abc123', '25')
 productos.addProduct('producto de prueba2', 'descripcion2', '8000', 'imagen2', 'abc456', '20')
-productos.addProduct('producto de prueba3', 'descripcion3', '9000', 'imagen3', 'abc789', '30')*/
+productos.addProduct('producto de prueba3', 'descripcion3', '9000', 'imagen3', 'abc789', '30')
+productos.addProduct('producto de prueba4', 'descripcion4', '5000', 'imagen4', 'abc234', '25')
+productos.addProduct('producto de prueba5', 'descripcion5', '8000', 'imagen5', 'abc567', '20')
+productos.addProduct('producto de prueba6', 'descripcion6', '9000', 'imagen6', 'abc890', '30')
+productos.addProduct('producto de prueba7', 'descripcion7', '5000', 'imagen7', 'abc111', '25')
+productos.addProduct('producto de prueba8', 'descripcion8', '8000', 'imagen8', 'abc222', '20')
+productos.addProduct('producto de prueba9', 'descripcion9', '9000', 'imagen9', 'abc333', '30')*/
 
-productos.getProducts()
+//productos.getProducts()
 
 //productos.getProductsById(3)
 
